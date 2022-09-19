@@ -21,6 +21,7 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index(): TemplateResponse {
+		// Adiciona o Script principal quando a rota index e chamada
 		Util::addScript(Application::APP_ID, 'procedure-main');
 		// Retorna o templete apos um get de / no navegador
 		return new TemplateResponse(Application::APP_ID, 'main');

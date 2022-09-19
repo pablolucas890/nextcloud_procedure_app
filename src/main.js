@@ -9,7 +9,7 @@ import Vue from 'vue'
 import App from './App'
 
 window.addEventListener('DOMContentLoaded', function () {
-	this.alert("Fui Carregado no main,js")
+	this.alert("Fui Carregado no main.js")
 })
 
 // eslint-disable-next-line
