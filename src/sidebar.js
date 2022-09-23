@@ -13,11 +13,12 @@ const TabI = Vue.extend(SharingTab)
 let TabProcedure = null
 
 // Aqui aplica a aba do menu de detalhes
-window.addEventListener('DOMContentLoaded',async function () {
+window.addEventListener('DOMContentLoaded', async function () {
     await new Promise(r => setTimeout(r, 3000));
     var elementos = document.getElementsByClassName("editor__content");
-    elementos[0].style.backgroundImage = "URL(../../../apps/procedure/src/assets/obsolete.jpg)"
-    console.log("elementos", elementos[0])
+    if (elementos.length > 0) {
+        elementos[0].style.backgroundImage = "URL(../../../apps/procedure/src/assets/obsolete.jpg)"
+    }
     if (OCA.Files && OCA.Files.Sidebar) {
         OCA.Files.Sidebar.registerTab(new OCA.Files.Sidebar.Tab({
             id: 'procedure',
@@ -28,9 +29,9 @@ window.addEventListener('DOMContentLoaded',async function () {
                 if (TabProcedure) {
                     TabProcedure.$destroy()
                 }
-				TabProcedure = new TabI({
-					parent: context,
-				})
+                TabProcedure = new TabI({
+                    parent: context,
+                })
                 // File Info sao informacoes do Arquivo
                 TabProcedure.$mount(el)
             },
